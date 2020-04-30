@@ -1,0 +1,39 @@
+<!--pages/post/post.wxml-->
+<view>
+  <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="3000" vertical="{{false}}">
+    <swiper-item>
+      <image src="{{imageArr[12]}}" catchtap=""></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="{{imageArr[10]}}"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="{{imageArr[14]}}"></image>
+    </swiper-item>
+  </swiper>
+</view>
+<view class="post-container">
+  <view class="post-author-date">
+      <image src="{{avatar}}"></image>
+      <text>{{data.object.date}}</text>
+  </view>
+  <text class="post-title">{{title}}</text>
+  <image class="post-image" src="{{postImg}}" mode="aspectFill"></image>
+  <text class="post-comtent">{{content}}</text>
+  <view class="post-like">
+    <image src="/images/ico/shoucang.png"></image>
+    <text>{{collectionNum.array[0]}}</text>
+    <image src="/images/ico/dianzang.png"></image>
+    <text>{{readingNum}}</text>
+    <image src="/images/ico/pinglun.png"></image>
+    <text>{{commentNum}}</text>
+  </view>
+  <text>图片素材提取库</text>
+  <view>
+    <block wx:for="{{imageArr}}" wx:for-item="img" wx:for-index="idx">
+      <view>{{idx}}</view>
+      <image src="{{img}}" class="imageList"></image>
+    </block>
+  </view>
+</view>
+
